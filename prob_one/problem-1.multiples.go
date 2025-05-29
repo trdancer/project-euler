@@ -1,8 +1,4 @@
-package main
-
-import (
-	"fmt"
-)
+package prob_one
 
 func Multiples(n int) int {
 	var sum int = 0
@@ -12,9 +8,4 @@ func Multiples(n int) int {
 		}
 	}
 	return sum
-}
-
-func main() {
-	answer := Multiples(1000)
-	fmt.Println(answer)
 }
