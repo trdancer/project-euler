@@ -7,7 +7,7 @@ func TestProblemOne(t *t.T) {
 	got := Multiples(1000)
 
 	if got != want {
-		t.Error(want, got)
+		t.Errorf("Expected: %d, got: %d", want, got)
 	}
 
 }
