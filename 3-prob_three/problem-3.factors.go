@@ -16,7 +16,7 @@ package prob_three
 	  	/\
 		 3 13
 */
-func getLargestFactor(n int) (int, bool) {
+func GetLargestFactor(n int) (int, bool) {
 	end := n / 2
 	for i := 2; i < end; i++ {
 		// n is divisible by i
@@ -24,7 +24,7 @@ func getLargestFactor(n int) (int, bool) {
 			// get the cofactor of i
 			cofactor := n / i
 			// get the largest factor of the cofactor
-			lfFactor, _ := getLargestFactor(cofactor)
+			lfFactor, _ := GetLargestFactor(cofactor)
 			// cofactor is prime if the largest factor is itself
 			// short circuit func here
 			return cofactor, lfFactor == cofactor
@@ -36,12 +36,12 @@ func getLargestFactor(n int) (int, bool) {
 
 func LargestPrimeFactor(n int) int {
 
-	factor, prime := getLargestFactor(n)
+	factor, prime := GetLargestFactor(n)
 	for {
 		if prime {
 			break
 		}
-		factor, prime = getLargestFactor(factor)
+		factor, prime = GetLargestFactor(factor)
 	}
 	return factor
 }
